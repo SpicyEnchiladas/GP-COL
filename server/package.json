@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "ts-node src/index.js",
+    "build": "npm install",
     "dev": "nodemon --exec ts-node src/index.js",
     "knex": "knex --knexfile ./src/db/knexfile.ts",
     "make:migrate": "knex migrate:make",
