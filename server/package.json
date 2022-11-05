@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "build": "npm install",
@@ -11,7 +12,8 @@
     "make:migrate": "knex migrate:make",
     "make:seed": "knex seed:make",
     "migrate": "knex migrate:latest",
-    "seed": "knex seed:run"
+    "seed": "knex seed:run",
+    "tsc": "tsc"
   },
   "author": "",
   "license": "ISC",
