@@ -1,15 +1,18 @@
 import path from 'path';
 
+
 export = {
 	development: {
         client: 'pg',
-        connection: {
-            host: "localhost",
-            port: "5432",
-            database: "cost_of_living",
-            user: "postgres",
-            password: "helloworld"
-        },
+        connection: process.env.DB_LOCAL_URL,
+		// {
+			
+            // host: "localhost",
+            // port: "5432",
+            // database: "cost_of_living",
+            // user: "postgres",
+            // password: "helloworld"
+        // },
         // searchPath: 'public',
 		pool: {
 			min: 2,
