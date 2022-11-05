@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export = {
 	development: {
         client: 'pg',
         connection: {
@@ -41,4 +41,4 @@ module.exports = {
 			directory: path.join(__dirname, "/seeds")
         }
 	} 
-}
+} as { [key: string]: Object }
