@@ -1,4 +1,4 @@
-const express = require("express");
+import express from 'express'
 // import db from "../db/knex.ts";
 function startServer() {
 	const app = express();
@@ -33,4 +33,4 @@ function startServer() {
 	return app;
 }
 
-module.exports = startServer;
+export default startServer;

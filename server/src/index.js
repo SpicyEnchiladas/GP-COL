@@ -1,4 +1,4 @@
-import server from "./server";
+import server from "./server.js";
 // import knex from "./db/knex.ts";
 const PORT = process.env.PORT || 8080;
 const app = server();
