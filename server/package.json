@@ -6,13 +6,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dev": "nodemon --exec ts-node src/index.js"
+    "dev": "nodemon --exec ts-node src/index.js",
+    "knex": "knex --knexfile ./src/db/knexfile.ts",
+    "make:migrate": "knex migrate:make",
+    "make:seed": "knex seed:make",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "knex": "^2.3.0",
+    "path": "^0.12.7",
+    "pg": "^8.8.0",
     "react": "^18.2.0",
     "react-scripts": "^5.0.1",
     "typescript": "^4.8.4"

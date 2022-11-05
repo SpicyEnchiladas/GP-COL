@@ -1,5 +1,5 @@
 const server = require("./server");
-// const db = require("../db/knex");
+const knex = require("../db/knex");
 const PORT = process.env.PORT || 8080;
 const app = server();
 
