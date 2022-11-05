@@ -1,6 +1,6 @@
 const express = require("express");
 // import db from "../db/knex.ts";
-export function startServer () {
+function startServer() {
 	const app = express();
 
 	app.use(express.json());
@@ -32,3 +32,5 @@ export function startServer () {
 
 	return app;
 }
+
+module.exports = startServer;
