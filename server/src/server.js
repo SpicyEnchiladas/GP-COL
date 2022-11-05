@@ -4,11 +4,15 @@ function startServer () {
 	const app = express();
 
 	app.use(express.json());
-	app.use("/", express.static("Gardo Caves"));
+	// app.use("/", express.static("Gardo Caves"));
 
-	// app.get("/test", (req, res) => {
-	// 	res.status(200).send("HELLO WORLD");
-	// });
+	app.get("/", (req, res) => {
+		res.status(200).send("Gardo Caves");
+	});
+
+	app.get("/test", (req, res) => {
+		res.status(200).send("HELLO WORLD");
+	});
 
 	// app.get("/api/selectCity", async (req, res) => {
 	// 	try {
