@@ -1,5 +1,5 @@
-import server from "./server";
-import knex from "./db/knex.ts";
+const server = require("./server");
+const knex = require("./db/knex.ts");
 const PORT = process.env.PORT || 8080;
 const app = server();
 

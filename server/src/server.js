@@ -1,9 +1,9 @@
-import express, { json } from "express";
+const express = require("express");
 // import db from "../db/knex.ts";
 function startServer () {
 	const app = express();
 
-	app.use(json());
+	app.use(express.json());
 	// app.use("/", express.static("Gardo Caves"));
 
 	app.get("/", (req, res) => {
@@ -33,4 +33,4 @@ function startServer () {
 	return app;
 }
 
-export default startServer;
+module.exports = startServer;
