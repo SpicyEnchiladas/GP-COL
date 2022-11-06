@@ -6,12 +6,13 @@ import { getUSDRate, filterCities, getCurrRate, convertCitiesCurr } from "../Glo
 
 async function getCities(USDRate : number, currRate : number) {
     
-    let listOfCities = await fetch(process.env.DATABASE_URL+'/api/selectCity')
-        .then ((citiesData ) => {
-            console.log(citiesData);
+    let listOfCities = await fetch('http://localhost:8080/api/selectCity')
+        .then ((data ) => {
+            console.log(data);
             // let filteredCities = filterCities(citiesData, USDRate);
             // let citiesWithCurr = convertCitiesCurr(filterCities, currRate);
         })
+    
 
 }
 

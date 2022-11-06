@@ -1,18 +1,19 @@
 import path from 'path';
-
+require('dotenv').config(); 
 
 export = {
 	development: {
         client: 'pg',
-        connection: process.env.DB_LOCAL_URL,
-		// {
+        connection: 
+		// process.env.DB_LOCAL_URL,
+		{
 			
-            // host: "localhost",
-            // port: "5432",
-            // database: "cost_of_living",
-            // user: "postgres",
-            // password: "helloworld"
-        // },
+            host: "127.0.0.1",
+            port: "5432",
+            database: "cost_of_living",
+            user: "kamil",
+            password: "buyukbalik"
+        },
         // searchPath: 'public',
 		pool: {
 			min: 2,
