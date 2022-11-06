@@ -7,9 +7,6 @@ const HeaderPanel : React.FC <{} > = () => {
         <><div className="title_header">
             <h1>Cost Of Living</h1>
            </div>
-        
-           <Favourites></Favourites>
-        
         </>
         
 
