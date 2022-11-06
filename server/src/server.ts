@@ -14,21 +14,21 @@ function startServer() {
 		res.status(200).send("HELLO WORLD");
 	});
 
-	// app.get("/api/selectCity", async (req, res) => {
-	// 	try {
-	// 		const cities = await db("cost_of_living")
-	// 			.select({
-	// 				id: "id",
-	// 				city_name: "city_name",
-	// 				total_cost_of_living: "total_cost_of_living",
-	// 			})
-	// 			.from("cities");
+	app.get("/api/selectCity", async (req, res) => {
+		try {
+			const cities = await db("cost_of_living")
+				.select({
+					id: "id",
+					city_name: "city_name",
+					total_cost_of_living: "total_cost_of_living",
+				})
+				.from("cities");
 
-	// 		res.status(200).send(cities);
-	// 	} catch (err) {
-	// 		console.log("No city found");
-	// 	}
-	// });
+			res.status(200).send(cities);
+		} catch (err) {
+			console.log("No city found");
+		}
+	});
 
 	return app;
 }
