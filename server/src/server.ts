@@ -1,5 +1,5 @@
 import express from 'express'
-// import db from "../db/knex.ts";
+import db from "./db/knex";
 function startServer() {
 	const app = express();
 
