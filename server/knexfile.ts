@@ -1,6 +1,6 @@
 import path from 'path';
 require('dotenv').config(); 
-require('./src/db/migrations')
+require('./migrations')
 
 export = {
 	development: {
@@ -21,11 +21,11 @@ export = {
 		},
 		migrations: {
 			// tableName: 'knex_migrations',
-			directory: path.resolve("./src/db/migrations"),
+			directory: path.resolve("./migrations"),
             extension: 'ts'
 		},
 		seeds: {
-			directory: path.join(__dirname, "./src/db/seeds")
+			directory: path.join(__dirname, "./seeds")
 		},	
 	},
 	production: {
@@ -38,11 +38,11 @@ export = {
 		},
 		migrations: {
 			// tableName: "knex_migrations",
-			directory: path.resolve("./src/db/migrations"),
+			directory: path.resolve("./migrations"),
             extension: 'ts'
 		},
 		seeds: {
-			directory: path.join(__dirname, "./src/db/seeds")
+			directory: path.join(__dirname, "./seeds")
         }
 	} 
 } as { [key: string]: Object }
