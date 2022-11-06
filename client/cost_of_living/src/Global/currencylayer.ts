@@ -4,22 +4,13 @@ import { CityObj } from "./global";
 export async function getUSDRate (budget: number, currency: string): Promise<number> {
 
     const myHeaders = new Headers();
-        myHeaders.append("apikey", "5Ie7tQtil1elhXLnfRbGibubzbFC4p5g");
+        myHeaders.append("apikey", "AiwxOAjKjM80PYyCH37ucNGHr7f2mjzE");
 
     interface RequestOptions {
         method: string;
         redirect: RequestRedirect | undefined;
         headers: Headers;
     };
-
-    interface apiDataFields {
-        info: {quote: number, timestamp: number},
-        query: {amount: number, from: string, to: string}
-        result: number,
-        success: Boolean
-
-    }
-
 
     const requestOptions:RequestOptions = {
         method: 'GET',
@@ -29,6 +20,7 @@ export async function getUSDRate (budget: number, currency: string): Promise<num
 
     const convertData = await fetch(`https://api.apilayer.com/currency_data/convert?to=USD&from=${currency}&amount=${budget}`, requestOptions)
     const parsedData = await convertData.json();
+    console.log(parsedData);
     
     return parsedData.result;
 };
@@ -36,7 +28,7 @@ export async function getUSDRate (budget: number, currency: string): Promise<num
 export async function getCurrRate (currency: string): Promise<number> {
 
     const myHeaders = new Headers();
-        myHeaders.append("apikey", "5Ie7tQtil1elhXLnfRbGibubzbFC4p5g");
+        myHeaders.append("apikey", "AiwxOAjKjM80PYyCH37ucNGHr7f2mjzE");
 
     interface RequestOptions {
         method: string;
@@ -88,6 +80,3 @@ export function convertCitiesCurr (listOfFilteredCities: Array<CityObj>, quote: 
         return city.total_cost_of_living = quote * Number(city["total_cost_of_living"]);
     });
 };
-
-// export  {convertCitiesCurr, filterCities, getCurrRate, getUSDRate};
-// export {getUSDRate};
