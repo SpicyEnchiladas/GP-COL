@@ -23,7 +23,11 @@ const  sendInputData = (value : number | string, currenciesCode : string):void =
 
 }
 
-const BudgetInput : React.FC <{} > = () => {
+interface BudgetInputProps {
+    handleCurrentView: (view: string) => void;
+}
+
+const BudgetInput : React.FC <BudgetInputProps> = ({ handleCurrentView }) => {
 
     const [value, setValue] = useState < number | string >('');
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
@@ -81,7 +85,11 @@ const BudgetInput : React.FC <{} > = () => {
                 )}   
 
             </button>
-            <button onClick={(): void => sendInputData(value, selectCurrency)}>Submit</button>
+            <button onClick={(): void => {
+                sendInputData(value, selectCurrency);
+                handleCurrentView("Ranged")
+                }
+            }>Submit</button>
                 
 
         </>
