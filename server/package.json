@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index",
-    "build": "npm install && npm run knex migrate:latest && npm run knex seed:run",
+    "start": "npx ts-node ./src/index",
+    "build": "npm install",
     "dev": "nodemon --exec ts-node src/index.ts",
     "knex": "knex --knexfile ./src/db/knexfile.ts",
     "tsc": "tsc"
