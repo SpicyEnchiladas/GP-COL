@@ -2,7 +2,7 @@
 require('dotenv').config();
 var cors = require('cors');
 import express from "express";
-import  knex  from "./db/knex";
+import  knex  from "./knex";
 
 function startServer() {
 	const app = express();

@@ -1,7 +1,7 @@
 // const server = require("./server");
 // import knex from "knex";
 import server from "./server";
-import knex from "./db/knex";
+import knex from "./knex";
 const PORT = process.env.PORT || 8080;
 const app = server();
 
