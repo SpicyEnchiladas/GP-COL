@@ -15,7 +15,7 @@ function startServer() {
 
 	app.get("/", (req, res) => {
 		console.log("@server");
-		res.status(200).send("Gardo Caves");
+		res.status(200).send("process.env.DATABASE_URL");
 	});
 
 	app.get("/test", (req, res) => {
