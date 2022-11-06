@@ -6,6 +6,8 @@ const HeaderPanel : React.FC <{} > = () => {
 
 const callServer = async () => {
     console.log("🌏");
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.DATABASE_URL);
     fetch("http://localhost:8080/test").then( (data) => console.log(data))
 }
 
