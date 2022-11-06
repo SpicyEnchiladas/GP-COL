@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install && npm install react-router-dom && npm install ts-node"
+    "build": "npm install && npm install react-router-dom && npm install ts-node && react-scripts build"
   },
   "eslintConfig": {
     "extends": [
