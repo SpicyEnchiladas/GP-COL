@@ -17,9 +17,7 @@ function startServer() {
 	app.get("/api/selectCity", async (req, res) => {
 		res.status(200).send("cost_of_living");
 		try {
-
-			
-		}
+		} catch (err) {}
 	});
 
 	// app.get("/api/selectCity", async (req, res) => {
