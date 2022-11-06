@@ -15,7 +15,7 @@ function startServer() {
 
 	app.get("/", (req, res) => {
 		console.log("@server");
-		res.status(200).send("process.env.DATABASE_URL");
+		res.status(200).send(process.env.DATABASE_URL);
 	});
 
 	app.get("/test", (req, res) => {
@@ -28,6 +28,8 @@ function startServer() {
 		try {
 		} catch (err) {}
 	});
+
+
 
 	// app.get("/api/selectCity", async (req, res) => {
 	// 	try {
