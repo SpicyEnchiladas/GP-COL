@@ -4,22 +4,31 @@ import DropDown from "./CurrencyDropDown";
 import { getUSDRate, filterCities, getCurrRate, convertCitiesCurr } from "../Global/currencylayer";
 
 
-async function getCities() {
-    await fetch('/api/selectCity')
-        .then((resp) => console.log(resp.body));
+async function getCities(USDRate : number, currRate : number) {
+    
+    let listOfCities = await fetch(process.env.DATABASE_URL+'/api/selectCity')
+        .then ((citiesData ) => {
+            console.log(citiesData);
+            // let filteredCities = filterCities(citiesData, USDRate);
+            // let citiesWithCurr = convertCitiesCurr(filterCities, currRate);
 
-        // .then((data) => console.log(data));
+        })
+
+   
+
+    
+
 
 }
 
 const  sendInputData = (value : number | string, currenciesCode : string):void => {
     
-    // const USDRate = getUSDRate(Number(value), currenciesCode);
-    // const currRate = getCurrRate(currenciesCode);
+    getUSDRate(Number(value), currenciesCode)
+        .then((USD_Data) => {
+            getCurrRate(currenciesCode)
+                .then( (curr_DATA) => getCities(USD_Data, curr_DATA))
 
-    console.log("🌏");
-    getCities();
-
+        } );
 
 }
 

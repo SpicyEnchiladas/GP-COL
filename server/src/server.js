@@ -1,4 +1,4 @@
-import express from 'express'
+import express from "express";
 // import db from "../db/knex.ts";
 function startServer() {
 	const app = express();
@@ -12,6 +12,12 @@ function startServer() {
 
 	app.get("/test", (req, res) => {
 		res.status(200).send("HELLO WORLD");
+	});
+
+	app.get("/api/selectCity", async (req, res) => {
+		res.status(200).send("cost_of_living");
+		try {
+		} catch (err) {}
 	});
 
 	// app.get("/api/selectCity", async (req, res) => {

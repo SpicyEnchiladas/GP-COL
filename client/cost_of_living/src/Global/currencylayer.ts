@@ -30,7 +30,6 @@ export async function getUSDRate (budget: number, currency: string): Promise<num
     const convertData = await fetch(`https://api.apilayer.com/currency_data/convert?to=USD&from=${currency}&amount=${budget}`, requestOptions)
     const parsedData = await convertData.json();
     
-    console.log(parsedData.result)
     return parsedData.result;
 };
 
@@ -70,8 +69,8 @@ export async function getCurrRate (currency: string): Promise<number> {
     // }
 
     return await fetch(`https://api.apilayer.com/currency_data/convert?to=${currency}&from=USD&amount=100`, requestOptions)
-        .then(response => response.text())
-        .then((data : any) => data['info' ]['quote'])
+        .then(response => response.json())
+        .then((data) => data['info' ]['quote'])
         .catch(error => console.log('error', error));
 };
 // CHANGE MONTLY_COL
