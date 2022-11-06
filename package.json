@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx ts-node ./src/index",
-    "build": "cd client/cost_of_living && npm install && react-scripts build",
+    "build": "cd client/cost_of_living && npm install && react-scripts build && react-scripts start",
     "dev": "nodemon --exec ts-node src/index.ts",
     "knex": "knex --knexfile ./src/db/knexfile.ts",
     "tsc": "tsc"
