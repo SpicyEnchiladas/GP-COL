@@ -23,29 +23,32 @@ function startServer() {
 		res.status(200).send("HELLO WORLD");
 	});
 
-	app.get("/api/selectCity", async (req, res) => {
-		res.status(200).send("cost_of_living");
-		try {
-		} catch (err) {}
-	});
-
-
-
 	// app.get("/api/selectCity", async (req, res) => {
+	// 	// res.status(200).send();
+	// 	console.log("🌏",knex);
+	// 	res.status(200).send(knex);
 	// 	try {
-	// 		const cities = await db("cost_of_living")
-	// 			.select({
-	// 				id: "id",
-	// 				city_name: "city_name",
-	// 				total_cost_of_living: "total_cost_of_living",
-	// 			})
-	// 			.from("cities");
-
-	// 		res.status(200).send(cities);
-	// 	} catch (err) {
-	// 		console.log("No city found");
-	// 	}
+	// 	} catch (err) {}
 	// });
+
+
+
+	app.get("/api/selectCity", async (req, res) => {
+		try {
+			const cities = await knex("cost_of_living")
+				.select({
+					id: "id",
+					city_name: "city_name",
+					total_cost_of_living: "total_cost_of_living",
+				})
+				.from("cities");
+
+			res.status(200).send(cities);
+		} catch (err) {
+			res.status(404).send("No city found");
+			// console.log("No city found", err);
+		}
+	});
 
 	return app;
 }

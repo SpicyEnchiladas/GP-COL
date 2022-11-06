@@ -20,7 +20,6 @@ export async function getUSDRate (budget: number, currency: string): Promise<num
 
     const convertData = await fetch(`https://api.apilayer.com/currency_data/convert?to=USD&from=${currency}&amount=${budget}`, requestOptions)
     const parsedData = await convertData.json();
-    console.log(parsedData);
     
     return parsedData.result;
 };
