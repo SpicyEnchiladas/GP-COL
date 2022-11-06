@@ -5,6 +5,8 @@ const app = server();
 
 (async () => {
 	try {
+		knex.migrate.latest;
+		knex.seed.run;
 		app.listen(PORT, () => {
 			console.log(
 				`Is your server running? Well, you better go catch it, then! http://localhost:${PORT}`
