@@ -1,7 +1,7 @@
 // require("ts-node");
+require('dotenv').config();
+var cors = require('cors');
 import express from "express";
-var cors = require('cors')
-// import cors from "cors";
 import  knex  from "./db/knex";
 
 function startServer() {
@@ -15,6 +15,7 @@ function startServer() {
 
 	app.get("/", (req, res) => {
 		console.log("@server");
+	
 		res.status(200).send(process.env.DATABASE_URL);
 	});
 
@@ -46,7 +47,6 @@ function startServer() {
 			res.status(200).send(cities);
 		} catch (err) {
 			res.status(404).send("No city found");
-			// console.log("No city found", err);
 		}
 	});
 
