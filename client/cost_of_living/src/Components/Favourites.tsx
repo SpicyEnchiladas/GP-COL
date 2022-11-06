@@ -5,7 +5,7 @@ export interface IFavouritesPageProps {
  
 const FavouritesPage: React.FunctionComponent<IFavouritesPageProps> = (props) => {
     return <div>
-        home
+        Favourites
     </div>;
 };
  
