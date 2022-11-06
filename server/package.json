@@ -5,13 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./src/index",
-    "build": "npm install && npm install ts-node",
-    "dev": "nodemon --exec ts-node src/index.js",
+    "build": "npm install && npm knex migrate:latest && npm knex seed:run",
+    "dev": "nodemon --exec ts-node src/index.ts",
     "knex": "knex --knexfile ./src/db/knexfile.ts",
-    "make:migrate": "knex migrate:make",
-    "make:seed": "knex seed:make",
-    "migrate": "knex migrate:latest",
-    "seed": "knex seed:run",
     "tsc": "tsc"
   },
   "author": "",
