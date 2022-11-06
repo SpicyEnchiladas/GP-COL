@@ -11,17 +11,14 @@ async function getCities(USDRate : number, currRate : number) {
             console.log(citiesData);
             // let filteredCities = filterCities(citiesData, USDRate);
             // let citiesWithCurr = convertCitiesCurr(filterCities, currRate);
-
         })
-
-   
-
-    
-
 
 }
 
+
+
 const  sendInputData = (value : number | string, currenciesCode : string):void => {
+
     
     getUSDRate(Number(value), currenciesCode)
         .then((USD_Data) => {
