@@ -6,6 +6,7 @@
     "web-vitals": "^3.0.4"
   },
   "devDependencies": {
-    "@types/react": "^18.0.25"
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8"
   }
 }
